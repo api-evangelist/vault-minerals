@@ -1,23 +1,88 @@
 aid: vault-minerals
+
 name: Vault Minerals
-description: 'Vault Minerals is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Vault Minerals is a Perth, Western Australia-based intermediate gold producer. Its own site says the company is a financially disciplined, returns-focused gold business anchored by a long-life asset in the Leonora district. It runs the Leonora Operations, the Mount Monger Gold Operations near Kalgoorlie and the Deflector Gold-Copper Operations in the Midwest Region of Western Australia, along with the Sugar Zone Gold Project in Ontario, Canada. The site publishes investor announcements, presentations, reports and Genesis Scheme of Arrangement information. It does not publish a developer portal, API documentation or a public API.
+
 url: https://raw.githubusercontent.com/api-evangelist/vault-minerals/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+- Mining
+- Gold
+- Natural Resources
+- Australia
+- Investor Relations
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/vault-minerals-hosts.yml
+- type: Vendors
+  url: vendors/vault-minerals-vendors.yml
+- type: DomainSecurity
+  url: security/vault-minerals-domain-security.yml
 - type: Website
   url: https://vaultminerals.com/
+- type: About
+  url: https://vaultminerals.com/about
+- type: Contact
+  url: https://vaultminerals.com/contact-us
+- type: InvestorRelations
+  url: https://vaultminerals.com/investors/announcements
+- type: Careers
+  url: https://vaultminerals.com/work-with-us
+- type: LinkedIn
+  url: https://www.linkedin.com/company/vault-minerals-limited/
+- type: X
+  url: https://x.com/VaultMinerals
+
+apis: []
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website vaultminerals.com names itself Vault Minerals (title "Vault Minerals - Home"). The site has no developer portal, API docs, terms or privacy pages, and no og:image or logo URL could be recovered, so image is left unset.
+  evidence:
+  - url: https://vaultminerals.com/
+    status: 200
+  - url: https://vaultminerals.com/about
+    status: 200
+  - url: https://vaultminerals.com/contact-us
+    status: 200
+  - url: https://vaultminerals.com/investors/announcements
+    status: 200
+  - url: https://vaultminerals.com/about/corporate-governance
+    status: 200
+  - url: https://vaultminerals.com/sitemap
+    status: 200
+  - url: https://www.linkedin.com/company/vault-minerals-limited/
+    status: 200
+  - url: https://x.com/VaultMinerals
+    status: 200
+  - url: https://vaultminerals.com/work-with-us
+    status: 200
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

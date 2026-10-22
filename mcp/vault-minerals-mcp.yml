@@ -1,0 +1,28 @@
+generated: '2026-10-22'
+method: none
+status: none
+source:
+- https://vaultminerals.com/
+- https://vaultminerals.com/llms.txt
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+search_result:
+  official_hosted_server: none
+  official_local_package: none
+  finding: Vault Minerals (ASX gold producer, Perth WA) publishes no MCP server, no developer portal, no API documentation and no OpenAPI contract. The pre-flight probes of vaultminerals.com found no MCP endpoint (verdict mcp absent) and a web search for a Vault Minerals MCP server or API returned only unrelated HashiCorp Vault MCP servers. No candidate tool list was derived because there is no OpenAPI in this repo to ground one in.
+  probes:
+  - url: https://vaultminerals.com/llms.txt
+    method: GET
+    status: 200
+    note: catch-all; returns the site's HTML homepage (text/html, ~250KB), not an llms.txt
+  observed_not_called:
+  - url: https://vaultminerals.com/api/graphql
+    note: Found by pre-flight contract discovery (52-byte JSON response). It appears to be the website CMS backend (the site serves media from /api/media/file/...), is not documented or advertised as an API by Vault Minerals, and so was not introspected.
+  unrelated_results:
+  - https://developer.hashicorp.com/vault/ai/mcp-server/reference
+tools: []
